@@ -1,0 +1,451 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Akash — Software Engineer (C++)</title>
+  <meta name="description" content="Akash writes C++ for real-time software: game engines, audio, video playback and gameplay systems. Year 3 Computer Science at SIT and DigiPen Singapore.">
+  <meta property="og:title" content="Akash — Software Engineer (C++)">
+  <meta property="og:description" content="Game engines, audio, video playback and gameplay systems in C++.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%232B44E0'/%3E%3Cpath d='M5 17c3 0 3-8 6-8s3 14 6 14 3-10 6-10 2 4 4 4' fill='none' stroke='%23fff' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,200..900;1,400..600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script>
+    (function () {
+      var t = null;
+      try { t = localStorage.getItem("theme"); } catch (e) {}
+      if (!t) t = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      document.documentElement.dataset.theme = t;
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip" href="#work">Skip to work</a>
+
+  <header class="site-header">
+    <a class="mark" href="#top" aria-label="Akash, back to top">Akash</a>
+    <nav aria-label="Main">
+      <ul>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#reels">Reels</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="header-tools">
+      <a class="header-cta" href="resume.pdf" download>Resume</a>
+      <button type="button" class="theme-toggle" aria-label="Dark mode" aria-pressed="false">
+        <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z"/></svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- ============ VIEWPORT (hero) ============ -->
+    <section class="viewport" aria-labelledby="hero-name">
+      <canvas id="scene" aria-hidden="true"></canvas>
+
+      <div class="vp-top">
+        <div class="vp-intro">
+          <h1 id="hero-name" class="hero-name">Akash</h1>
+          <p class="vp-tagline">Software engineer writing C++ for game engines, tools and gameplay.</p>
+        </div>
+
+        <div class="hud" role="group" aria-label="Viewport controls">
+          <div class="hud-row"><span>FPS</span><span class="hud-val" id="hud-fps">000000</span></div>
+          <div class="hud-row"><span>Frame</span><span class="hud-val" id="hud-ms">00.0 ms</span></div>
+          <div class="hud-row"><span>Draw calls</span><span class="hud-val" id="hud-draws">00</span></div>
+          <div class="hud-row"><span>Entities</span><span class="hud-val" id="hud-entities">00</span></div>
+          <div class="hud-row"><span>Triangles</span><span class="hud-val" id="hud-tris">000</span></div>
+          <div class="hud-row"><span>Selected</span><span class="hud-val" id="hud-selected">None</span></div>
+          <button type="button" class="hud-row hud-btn" id="hud-orbit" aria-pressed="true"><span>Orbit <b>On</b></span><kbd>O</kbd></button>
+          <button type="button" class="hud-row hud-btn" id="hud-pause" aria-pressed="false"><span>Pause <b>Off</b></span><kbd>P</kbd></button>
+          <button type="button" class="hud-row hud-btn" id="hud-theme"><span>Theme <b>Light</b></span><kbd>T</kbd></button>
+        </div>
+      </div>
+
+      <div class="vp-bottom">
+        <span class="vp-word">Engine</span>
+        <a class="vp-line" href="#work"><span>View work</span></a>
+        <span class="vp-word">Gameplay</span>
+      </div>
+    </section>
+
+    <!-- ============ INTRO ============ -->
+    <section class="intro" aria-label="Introduction">
+      <div class="hero-grid">
+        <div class="hero-intro">
+          <p class="hero-role">Software engineer, C++</p>
+          <p class="hero-lede">I write the parts of real-time software that players never see but always feel: engine systems, gameplay code and the tools teams build with.</p>
+          <div class="hero-actions">
+            <a class="btn btn-solid" href="#reels">Watch my programming reel</a>
+            <a class="btn" href="resume.pdf" download>Download resume</a>
+          </div>
+        </div>
+
+        <aside class="now" aria-label="What I'm working on now">
+          <p class="now-label"><span class="pulse" aria-hidden="true"></span>Working on now</p>
+          <p><a href="#atelier3d">Atelier3D</a>, a C++20 game engine and editor built by a team of nine. I’ve built its audio and physics.</p>
+          <p class="now-meta">Year 3, Computer Science in Interactive Media and Game Development at SIT and DigiPen Singapore. Open to internships.</p>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ============ WORK ============ -->
+    <section id="work" class="work" aria-labelledby="work-title">
+      <div class="work-panel">
+        <div class="work-panel-top">
+          <h2 id="work-title">Work <span class="title-code">_ C++.</span></h2>
+          <p class="work-count" aria-hidden="true"><span id="work-count">07</span><span class="work-count-dash"></span><span id="work-total">07</span></p>
+        </div>
+        <div class="filter" role="group" aria-label="Filter projects">
+          <button type="button" data-filter="all" aria-pressed="true">All</button>
+          <button type="button" data-filter="engine" aria-pressed="false">Engine &amp; systems</button>
+          <button type="button" data-filter="audio" aria-pressed="false">Audio &amp; video</button>
+          <button type="button" data-filter="gameplay" aria-pressed="false">Gameplay</button>
+          <button type="button" data-filter="ai" aria-pressed="false">AI</button>
+          <button type="button" data-filter="design" aria-pressed="false">Design</button>
+          <button type="button" data-filter="lead" aria-pressed="false">Team lead</button>
+        </div>
+        <ul class="work-index">
+          <li class="wi-row" data-tags="engine audio gameplay lead design"><a href="#embers-escape"><span class="wi-name">Ember’s Escape</span><span class="wi-tags">// Engine // Audio // Team lead</span></a></li>
+          <li class="wi-row" data-tags="engine audio"><a href="#atelier3d"><span class="wi-name">Atelier3D</span><span class="wi-tags">// Engine // Audio // Physics</span></a></li>
+          <li class="wi-row" data-tags="ai gameplay engine"><a href="#goap"><span class="wi-name">GOAP Outpost Defense</span><span class="wi-tags">// AI // C++17 // A*</span></a></li>
+          <li class="wi-row" data-tags="gameplay"><a href="#donut-co"><span class="wi-name">Donut Co.</span><span class="wi-tags">// Gameplay // Unity</span></a></li>
+          <li class="wi-row" data-tags="design gameplay"><a href="#help-singa"><span class="wi-name">Help Singa</span><span class="wi-tags">// Level design // Unity</span></a></li>
+          <li class="wi-row" data-tags="design"><a href="#soccer-life"><span class="wi-name">Soccer Life</span><span class="wi-tags">// Game design // Prototype</span></a></li>
+          <li class="wi-row" data-tags="design"><a href="#level-design"><span class="wi-name">Level design</span><span class="wi-tags">// Pacing // Coursework</span></a></li>
+        </ul>
+      </div>
+      <p class="filter-status" id="filter-status" aria-live="polite"></p>
+
+      <!-- Ember's Escape -->
+      <article class="project" id="embers-escape" data-tags="engine audio gameplay lead design">
+        <div class="project-video">
+          <div class="video-head">
+            <div class="title-wrap"><span class="project-no" aria-hidden="true">01 — 03</span><h3>Ember’s Escape</h3></div>
+            <div class="video-tabs" role="tablist" aria-label="Ember’s Escape videos">
+            <button type="button" role="tab" id="ee-tab-1" aria-selected="true" aria-controls="ee-panel" data-id="JbAk2nlF78M" data-label="Ember’s Escape gameplay showcase" data-note="The game in action: heat, melting and fire puzzles on our custom C++ engine.">Gameplay</button>
+            <button type="button" role="tab" id="ee-tab-4" aria-selected="false" aria-controls="ee-panel" tabindex="-1" data-id="A9iLIESJEH0" data-label="Ember’s Escape engine showcase" data-note="A tour of our custom C++ engine and its editor tools. Narrated by a teammate.">Engine</button>
+            <button type="button" role="tab" id="ee-tab-2" aria-selected="false" aria-controls="ee-panel" tabindex="-1" data-id="lamaEjHOac8" data-label="Ember’s Escape: my code walkthrough" data-note="A walkthrough of the systems I wrote for the game and its engine.">My code</button>
+            <button type="button" role="tab" id="ee-tab-3" aria-selected="false" aria-controls="ee-panel" tabindex="-1" data-id="kgsEhKaxGsU" data-label="Ember’s Escape trailer" data-note="The game’s trailer.">Trailer</button>
+            </div>
+          </div>
+          <div class="video-panel" id="ee-panel" role="tabpanel" aria-labelledby="ee-tab-1">
+            <button type="button" class="yt" data-id="JbAk2nlF78M" aria-label="Play Ember’s Escape gameplay showcase">
+              <img src="https://i.ytimg.com/vi/JbAk2nlF78M/hqdefault.jpg" alt="" width="480" height="360">
+              <span class="play" aria-hidden="true"></span>
+            </button>
+          </div>
+          <p class="video-note" id="ee-note">The game in action: heat, melting and fire puzzles on our custom C++ engine.</p>
+        </div>
+
+        <div class="project-text">
+          <p class="project-lede">A 2D puzzle-platformer on our own C++ engine. You play a flame: melting ice and lighting fires drain the same meter as your health, so every ability is a resource decision.</p>
+
+          <dl class="facts">
+            <div><dt>Role</dt><dd>Team lead, product manager and engine programmer</dd></div>
+            <div><dt>Team</dt><dd>7 people, 2 trimesters, 6 milestones to gold</dd></div>
+            <div><dt>Stack</dt><dd>C++, OpenGL, ImGui, FMOD</dd></div>
+          </dl>
+
+          <div class="case">
+            <div class="case-step">
+              <h4>The problem</h4>
+              <p>The engine couldn’t play video, but the game needed cutscenes. Playtests also showed players running out of heat without noticing it coming.</p>
+            </div>
+            <div class="case-step">
+              <h4>What I did</h4>
+              <ul>
+                <li>Built a cutscene player on Windows Media Foundation for video and WASAPI for its audio.</li>
+                <li>Built the low-health warning: a screen vignette plus muffled audio, with thresholds designers can tune without touching code. <a href="#heat-demo">Try a version of it below.</a></li>
+                <li>Built the core puzzle objects: meltable ice, food blocks and the heat beam.</li>
+              </ul>
+            </div>
+            <div class="case-step case-result">
+              <h4>The result</h4>
+              <p>The cutscene system, 1,131 lines, shipped in the gold build. In the M2 playtest, 80% of testers rated the UI very highly and every tester scored the audio 4 or 5 out of 5.</p>
+            </div>
+          </div>
+
+          <h4>How I led</h4>
+          <ul>
+            <li>Was the main link between art, design and tech, tracked everyone’s progress and kept us on deadline from Unity prototype to gold build.</li>
+            <li>Ran a playtest every milestone and turned the results into changes, like reversible food-block states that remove soft-locks.</li>
+          </ul>
+        </div>
+
+        <figure class="project-figure">
+          <svg class="diagram" viewBox="0 0 440 330" role="img" aria-labelledby="dg1-t">
+            <title id="dg1-t">Cutscene player: a video file is decoded by Windows Media Foundation for video and played through WASAPI for audio, inside the engine's cutscene player.</title>
+            <g class="dg-box"><rect x="150" y="16" width="140" height="48" rx="6"/><text x="220" y="45">Video file</text></g>
+            <path class="dg-line" d="M220 64 V96 H110 V128 M220 96 H330 V128"/>
+            <g class="dg-box dg-accent"><rect x="20" y="128" width="180" height="64" rx="6"/><text x="110" y="156">Media Foundation</text><text class="dg-sub" x="110" y="176">decodes frames</text></g>
+            <g class="dg-box dg-accent"><rect x="240" y="128" width="180" height="64" rx="6"/><text x="330" y="156">WASAPI</text><text class="dg-sub" x="330" y="176">plays the soundtrack</text></g>
+            <path class="dg-line" d="M110 192 V236 M330 192 V236"/>
+            <g class="dg-box dg-strong"><rect x="20" y="236" width="400" height="64" rx="6"/><text x="220" y="264">Cutscene player in the engine</text><text class="dg-sub" x="220" y="284">1,131 lines of C++, shipped in gold</text></g>
+          </svg>
+          <figcaption>How the cutscene player fits together</figcaption>
+
+          <div class="demo" id="heat-demo">
+            <div class="demo-stage" aria-hidden="true">
+              <svg class="demo-flame" viewBox="0 0 100 130">
+                <path class="flame-outer" d="M50 6C58 30 82 44 82 78a32 32 0 0 1-64 0c0-16 8-26 14-34 2 10 6 16 12 18C40 44 40 24 50 6Z"/>
+                <path class="flame-inner" d="M50 58c6 10 16 16 16 30a16 16 0 0 1-32 0c0-8 4-13 8-17 1 5 3 8 6 9-1-8-1-14 2-22Z"/>
+              </svg>
+              <div class="demo-vignette"></div>
+              <span class="demo-readout"><span id="heat-value">100</span>% heat</span>
+            </div>
+            <div class="demo-controls">
+              <label for="heat">Heat</label>
+              <input type="range" id="heat" min="0" max="100" value="100" aria-describedby="heat-help">
+              <button type="button" class="demo-sound" aria-pressed="false">Turn sound on</button>
+            </div>
+            <p class="demo-help" id="heat-help">Drag the heat down. Below 40% the edges close in and the fire’s crackle gets muffled, like the warning in the game. This is a browser recreation, built for this site with Web Audio.</p>
+          </div>
+        </figure>
+      </article>
+
+      <!-- Atelier3D -->
+      <article class="project project-flip" id="atelier3d" data-tags="engine audio">
+        <div class="project-text">
+          <span class="project-no" aria-hidden="true">02 — 03</span>
+          <h3>Atelier3D</h3>
+          <p class="status"><span class="pulse" aria-hidden="true"></span>In development this semester</p>
+          <p class="project-lede">A Scratch-style 3D game-creation tool that teaches teenagers to code, built on our own C++20 engine and editor. It’s our capstone project, and I’m still working on it.</p>
+
+          <dl class="facts">
+            <div><dt>Role</dt><dd>Audio and physics programmer</dd></div>
+            <div><dt>Team</dt><dd>9 people, two-semester capstone</dd></div>
+            <div><dt>Stack</dt><dd>C++20, FMOD Core, CMake, clang-format, Jira</dd></div>
+          </dl>
+
+          <div class="case">
+            <div class="case-step">
+              <h4>The problem</h4>
+              <p>The team wanted FMOD for audio, but FMOD doesn’t support every toolchain we build on. The engine still had to compile and run everywhere.</p>
+            </div>
+            <div class="case-step">
+              <h4>What I did</h4>
+              <ul>
+                <li>Wrote one <code>AudioSystem</code> interface with two backends: FMOD Core where it’s available, and a silent fallback everywhere else.</li>
+                <li>Made sound data-driven: JSON sound banks define 3D sound effects and music, routed through mixer buses.</li>
+                <li>Built the physics side of the engine as well, so I own both audio and physics in the app.</li>
+              </ul>
+            </div>
+            <div class="case-step case-result">
+              <h4>The result</h4>
+              <p>About 1,700 lines shipped in Milestone 1, following the team’s CMake, clang-format and Jira workflow.</p>
+            </div>
+          </div>
+
+        </div>
+
+        <figure class="project-figure">
+          <svg class="diagram" viewBox="0 0 440 330" role="img" aria-labelledby="dg2-t">
+            <title id="dg2-t">Audio architecture: engine and editor code call one AudioSystem interface, which is configured by JSON sound banks and uses either an FMOD Core backend with mixer buses or a silent fallback.</title>
+            <g class="dg-box"><rect x="20" y="16" width="190" height="48" rx="6"/><text x="115" y="45">Engine &amp; editor</text></g>
+            <g class="dg-box"><rect x="230" y="16" width="190" height="48" rx="6"/><text x="325" y="45">JSON sound banks</text></g>
+            <path class="dg-line" d="M115 64 V112 M325 64 V112"/>
+            <g class="dg-box dg-strong"><rect x="20" y="112" width="400" height="56" rx="6"/><text x="220" y="146">AudioSystem interface</text></g>
+            <path class="dg-line" d="M220 168 V196 H115 V224 M220 196 H325 V224"/>
+            <g class="dg-box dg-accent"><rect x="20" y="224" width="190" height="76" rx="6"/><text x="115" y="252">FMOD Core</text><text class="dg-sub" x="115" y="272">3D sound, music,</text><text class="dg-sub" x="115" y="289">mixer buses</text></g>
+            <g class="dg-box dg-dashed"><rect x="230" y="224" width="190" height="76" rx="6"/><text x="325" y="252">Silent fallback</text><text class="dg-sub" x="325" y="272">for toolchains</text><text class="dg-sub" x="325" y="289">FMOD can’t target</text></g>
+          </svg>
+          <figcaption>The audio system’s shape: one interface, two backends</figcaption>
+        </figure>
+      </article>
+
+      <!-- GOAP -->
+      <article class="project" id="goap" data-tags="ai gameplay engine">
+        <div class="project-text">
+          <span class="project-no" aria-hidden="true">03 — 03</span>
+          <h3>GOAP Outpost Defense</h3>
+          <p class="project-lede">A research demo of goal-oriented action planning. Three NPC agents defend an outpost and nothing is scripted: each one picks a goal, and a regressive A* planner finds the cheapest sequence of actions to reach it.</p>
+
+          <dl class="facts">
+            <div><dt>Role</dt><dd>Main programmer: planner, simulation and app</dd></div>
+            <div><dt>Team</dt><dd>4 people, AI research project</dd></div>
+            <div><dt>Stack</dt><dd>C++17, SFML, Visual Studio</dd></div>
+          </dl>
+
+          <h4>What I built</h4>
+          <ul>
+            <li>The whole planning side: world-state facts, actions, the regressive A* planner, the simulation, the contract header and the planner unit tests. About 1,600 lines in one milestone.</li>
+            <li>The SFML app on top: window, rendering, input, and the labels that show each agent’s goal and plan. About 600 lines.</li>
+            <li>In total about 2,000 of the project’s 2,500 lines of code, according to the commit history.</li>
+          </ul>
+
+          <h4>How it works</h4>
+          <ul>
+            <li>Before planning, the live simulation is compressed into 9 true/false facts, such as <code>HasWeapon</code> or <code>LowHealth</code>. The planner never sees a coordinate, which keeps search fast and easy to reason about.</li>
+            <li>Nine actions, each with preconditions, effects and a cost. Goals run in priority order: survive, call for help, defend, patrol. The highest one that applies wins, re-checked every tick.</li>
+            <li>The simulation is pure C++17 with no graphics. A single contract header separates it from the SFML renderer, so the planner can be unit-tested and run headless.</li>
+          </ul>
+
+          <h4>Try it</h4>
+          <ul>
+            <li>Change the world while it runs: spawn threats, drop weapons, injure an agent or make melee cheap. The agents replan on the spot, and each one shows its current goal and plan above its head.</li>
+          </ul>
+
+          <p class="links"><a href="https://github.com/OrianAkash/GOAP">Source on GitHub</a></p>
+        </div>
+
+        <figure class="project-figure">
+          <svg class="diagram" viewBox="0 0 440 330" role="img" aria-labelledby="dg3-t">
+            <title id="dg3-t">Each tick the world is compressed into true/false facts, the highest-priority goal is chosen from survive, call for help, defend and patrol, and a regressive A* search finds the cheapest plan.</title>
+            <g class="dg-box"><rect x="20" y="16" width="400" height="48" rx="6"/><text x="220" y="45">World snapshot: 9 true/false facts</text></g>
+            <path class="dg-line" d="M220 64 V92 H67 V112 M220 92 H169 V112 M220 92 H271 V112 M220 92 H373 V112"/>
+            <g class="dg-box dg-accent"><rect x="20" y="112" width="94" height="56" rx="6"/><text x="67" y="145">Survive</text></g>
+            <g class="dg-box"><rect x="122" y="112" width="94" height="56" rx="6"/><text x="169" y="136">Call for</text><text x="169" y="156">help</text></g>
+            <g class="dg-box"><rect x="224" y="112" width="94" height="56" rx="6"/><text x="271" y="145">Defend</text></g>
+            <g class="dg-box"><rect x="326" y="112" width="94" height="56" rx="6"/><text x="373" y="145">Patrol</text></g>
+            <text class="dg-sub" x="220" y="192">goals, highest priority first</text>
+            <path class="dg-line" d="M220 202 V230"/>
+            <g class="dg-box dg-strong"><rect x="20" y="230" width="400" height="70" rx="6"/><text x="220" y="260">Regressive A* planner</text><text class="dg-sub" x="220" y="282">cheapest chain of actions to reach the goal</text></g>
+          </svg>
+          <figcaption>Facts in, goal chosen, cheapest plan out</figcaption>
+        </figure>
+      </article>
+
+      <!-- More work: compact index -->
+      <h3 class="index-title">More projects</h3>
+      <ul class="index">
+        <li class="index-row" id="donut-co" data-tags="gameplay">
+          <a class="thumb" href="https://youtu.be/31uHneIRXuE" aria-label="Watch the Donut Co. trailer on YouTube">
+            <img src="https://i.ytimg.com/vi/31uHneIRXuE/hqdefault.jpg" alt="" loading="lazy" width="480" height="360">
+          </a>
+          <div>
+            <h4>Donut Co.</h4>
+            <p>A hackathon survival game: juggle three resources, play short minigames, and spend earnings on boosts in a buff shop.</p>
+            <p class="row-meta">Main programmer. Unity, C#.</p>
+            <p class="links"><a href="https://youtu.be/31uHneIRXuE">Watch the trailer</a></p>
+          </div>
+        </li>
+
+        <li class="index-row" id="help-singa" data-tags="design gameplay">
+          <a class="thumb" href="https://youtu.be/YiZLzzOJqE0" aria-label="Watch Help Singa level 1 on YouTube">
+            <img src="https://i.ytimg.com/vi/YiZLzzOJqE0/hqdefault.jpg" alt="" loading="lazy" width="480" height="360">
+          </a>
+          <div>
+            <h4>Help Singa</h4>
+            <p>A climate-themed mobile platformer with two levels paced along a rising difficulty curve.</p>
+            <p class="row-meta">Main game and level designer. Unity, C#.</p>
+            <p class="links"><a href="https://youtu.be/YiZLzzOJqE0">Level 1</a> <a href="https://youtu.be/Wq8lj9_PsGQ">Level 2</a></p>
+          </div>
+        </li>
+
+        <li class="index-row" id="soccer-life" data-tags="design">
+          <a class="thumb" href="https://youtu.be/6-lb_IcynZo" aria-label="Watch the Soccer Life demo on YouTube">
+            <img src="https://i.ytimg.com/vi/6-lb_IcynZo/hqdefault.jpg" alt="" loading="lazy" width="480" height="360">
+          </a>
+          <div>
+            <h4>Soccer Life</h4>
+            <p>A mobile match-3 game designed end to end and built as a clickable touch prototype, with every sprite and UI asset drawn to stay readable at phone size.</p>
+            <p class="row-meta">Game designer. Adobe XD, Illustrator.</p>
+            <p class="links"><a href="https://xd.adobe.com/view/e795e74a-5852-4e98-a22f-5f313f449d4b-b2c6/?fullscreen&amp;hints=off">Try the prototype</a> <a href="https://youtu.be/nG1bvRoH070">Design video</a> <a href="https://youtu.be/6-lb_IcynZo">Demo</a></p>
+          </div>
+        </li>
+
+        <li class="index-row index-row-text" id="level-design" data-tags="design">
+          <div class="thumb thumb-curve" aria-hidden="true">
+            <svg viewBox="0 0 160 120"><path d="M8 100 L30 80 L42 88 L64 56 L76 70 L98 40 L110 58 L132 18 L152 96" /></svg>
+          </div>
+          <div>
+            <h4>Level design</h4>
+            <p>A 150 × 150 m quest campaign planned experience-first, with a duration and target intensity for every story event and an ending that branches into stealth and sewer routes. Plus easy, normal and hard Mega Man Maker levels, each with a cadence table and pacing curve.</p>
+            <p class="row-meta">Level Design Methods coursework. Mega Man Maker, RPG Map Editor 2, Figma.</p>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ============ REELS ============ -->
+    <section id="reels" class="reels" aria-labelledby="reels-title">
+      <div class="section-head">
+        <h2 id="reels-title">Reels</h2>
+        <p class="section-note">Short cuts of my work. Each one loads from YouTube when you press play.</p>
+      </div>
+      <div class="reel-grid">
+        <figure class="reel reel-main">
+          <button type="button" class="yt" data-id="9A4MKQ--u6w" aria-label="Play programming reel">
+            <img src="https://i.ytimg.com/vi/9A4MKQ--u6w/hqdefault.jpg" alt="" loading="lazy" width="480" height="360">
+            <span class="play" aria-hidden="true"></span>
+          </button>
+          <figcaption>Programming</figcaption>
+        </figure>
+        <figure class="reel">
+          <button type="button" class="yt" data-id="Ql-tXh-PQm8" aria-label="Play design and UI/UX reel">
+            <img src="https://i.ytimg.com/vi/Ql-tXh-PQm8/hqdefault.jpg" alt="" loading="lazy" width="480" height="360">
+            <span class="play" aria-hidden="true"></span>
+          </button>
+          <figcaption>Design and UI/UX</figcaption>
+        </figure>
+        <figure class="reel">
+          <button type="button" class="yt" data-id="KMf_kbtu1QE" aria-label="Play 3D reel">
+            <img src="https://i.ytimg.com/vi/KMf_kbtu1QE/hqdefault.jpg" alt="" loading="lazy" width="480" height="360">
+            <span class="play" aria-hidden="true"></span>
+          </button>
+          <figcaption>3D</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ============ ABOUT ============ -->
+    <section id="about" class="about" aria-labelledby="about-title">
+      <h2 id="about-title">About</h2>
+      <div class="about-grid">
+        <div class="about-bio">
+          <img class="portrait" src="photo.jpg" alt="Portrait of Akash" width="480" height="600" loading="lazy" onerror="this.remove()">
+          <p class="about-big">I’m Akash. I like the low-level work that decides how a game feels: when a sound plays, how a frame reaches the screen, what an agent decides to do next.</p>
+          <p>I’ve led a seven-person team to a gold build while writing engine code, and this semester I’ve built the audio and physics for a nine-person C++20 engine. Leading taught me to explain technical trade-offs to artists and designers, and to plan work so it lands on the milestone.</p>
+          <p>Before university I wrote lessons on AI, drones and micro:bit programming for primary and secondary students, and taught coding programmes in schools. Breaking hard topics into small steps is still how I approach unfamiliar code. I also study psychology, which shapes how I think about what players notice and feel.</p>
+        </div>
+
+        <div class="about-side">
+          <h3>Skills</h3>
+          <dl class="skills">
+            <div><dt>Languages</dt><dd>C++, C, C#, Java, SQL, HTML</dd></div>
+            <div><dt>Engines and libraries</dt><dd>Custom C++ engines, OpenGL, ImGui, FMOD, Windows Media Foundation, WASAPI, SFML, Unity</dd></div>
+            <div><dt>Workflow</dt><dd>Visual Studio, CMake, clang-format, Jira</dd></div>
+            <div><dt>Design and media</dt><dd>Figma, Adobe XD, Maya, Photoshop, Illustrator, Premiere Pro</dd></div>
+            <div><dt>Spoken</dt><dd>English, Burmese, Tamil</dd></div>
+          </dl>
+
+          <h3>Education</h3>
+          <ul class="timeline">
+            <li><strong>Singapore Institute of Technology and DigiPen Institute of Technology Singapore</strong><span>BSc (Hons) Computer Science in Interactive Media and Game Development, Year 3</span></li>
+            <li><strong>Temasek Polytechnic</strong><span>Diploma in Game Design and Development</span></li>
+          </ul>
+
+          <h3>Experience</h3>
+          <ul class="timeline">
+            <li><strong>EP Asia</strong><span>Lesson content creator (intern), then freelance trainer. Sep 2023 to Apr 2024.</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section id="contact" class="contact" aria-labelledby="contact-title">
+      <h2 id="contact-title">Let’s talk</h2>
+      <p class="contact-lede">I’m looking for an internship where I can work on engines, tools or gameplay systems. The fastest way to reach me is email.</p>
+      <a class="contact-mail" href="mailto:kaungthantwinakash@gmail.com">kaungthantwinakash@gmail.com</a>
+      <p class="contact-links">
+        <a href="resume.pdf" download>Download resume (PDF)</a>
+        <button type="button" class="copy" data-copy="kaungthantwinakash@gmail.com">Copy email</button>
+      </p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Akash (Kaung Thant Win), Singapore. Built with plain HTML, CSS and a little JavaScript.</p>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>
